@@ -15,7 +15,7 @@ export function TodoCard({todos}:todoCardProps){
     const { toast } = useToast()
     const router = useRouter()
     return (
-        <div className="w-[400px]"> 
+        <div className="w-[400px] lg:w-[600px]"> 
             <ul >
                 {todos.map((todo)=>{
                     const id = todo.id

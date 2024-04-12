@@ -12,6 +12,9 @@ export function AddTodo(){
     const router = useRouter()
 
     async function handleClick(){
+        console.log("before settodo cleat")
+        setTodo("")
+        console.log("after settodo cleat")
         toast({
             variant:"default",
             description: "Todo created successfully",
@@ -20,7 +23,7 @@ export function AddTodo(){
         console.log("new todo", todo)
         const res = await addTodo(todo)
         console.log(res)
-        router.refresh()
+        router.replace("/");
     }
 
     return (
