@@ -1,4 +1,4 @@
-"use server"
+
 
 import { getTodo } from "@/actions/getTodos";
 import { TodoCard } from "./TodoCard";

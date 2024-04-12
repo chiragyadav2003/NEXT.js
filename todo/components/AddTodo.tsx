@@ -19,7 +19,7 @@ export function AddTodo(){
                 <Input placeholder="write todo" onChange={(e)=>{
                     setTodo(e.target.value)
                 }}/>
-                <Button onClick={handleClick}>Add Todo</Button>
+                <Button onClick={handleClick} className="focus:scale-95 focus:duration-300">Add Todo</Button>
             </form>
         </div>
     )

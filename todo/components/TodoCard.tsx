@@ -1,15 +1,18 @@
 "use client"
 import { DeleteTodo } from "@/actions/deleteTodo";
 import { Button } from "./ui/button";
+import { useRouter } from 'next/navigation'
 
 interface todoCardProps{
     todos:{
         id:Number,
         content:string
-    }[]
+    }[],
+    // router:NextRouter
 }
 
 export function TodoCard({todos}:todoCardProps){
+    const router = useRouter()
     return (
         <div className="w-[400px]"> 
             <ul >
@@ -25,6 +28,7 @@ export function TodoCard({todos}:todoCardProps){
                                     <Button
                                         onClick={async()=>{
                                             await DeleteTodo(Number(id))
+                                            router.refresh()
                                         }}
                                     >Delete Todo</Button>
                                 </div>
