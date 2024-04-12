@@ -1,10 +1,10 @@
 "use server"
 
-import prisma from "@/db/prisma/db";
+import { getTodo } from "@/actions/getTodos";
 import { TodoCard } from "./TodoCard";
 
 export async function DisplayTodo(){
-    const todos = await prisma.todo.findMany()
+    const todos = await getTodo()
 
     return (
         <div>
