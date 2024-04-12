@@ -2,7 +2,7 @@
 import { DeleteTodo } from "@/actions/deleteTodo";
 import { Button } from "./ui/button";
 import { useRouter } from 'next/navigation'
-
+import { useToast } from "@/components/ui/use-toast"
 interface todoCardProps{
     todos:{
         id:Number,
@@ -12,6 +12,7 @@ interface todoCardProps{
 }
 
 export function TodoCard({todos}:todoCardProps){
+    const { toast } = useToast()
     const router = useRouter()
     return (
         <div className="w-[400px]"> 
@@ -28,6 +29,9 @@ export function TodoCard({todos}:todoCardProps){
                                     <Button
                                         onClick={async()=>{
                                             await DeleteTodo(Number(id))
+                                            toast({
+                                                description: "todo deleted successfully",
+                                            })
                                             router.refresh()
                                         }}
                                     >Delete Todo</Button>

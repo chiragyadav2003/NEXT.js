@@ -24,8 +24,8 @@ export function AddTodo(){
     }
 
     return (
-        <div className="flex flex-col items-center gap-2 justify-center">
-                <Input placeholder="write todo" onChange={(e)=>{
+        <div className="flex flex-col items-center gap-x-2 gap-y-4 justify-center">
+                <Input className="w-[300px] lg:w-[600px]" placeholder="enter todo" onChange={(e)=>{
                     setTodo(e.target.value)
                 }}/>
                 <Button onClick={handleClick} className="focus:scale-95 focus:duration-300">Add Todo</Button>
