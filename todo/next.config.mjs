@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    devServer: {
-        hot: false,
-    },
-};
+const nextConfig = {};
 
 export default nextConfig;
